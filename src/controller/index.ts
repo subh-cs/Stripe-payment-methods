@@ -7,9 +7,12 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 // Stripe
 import Stripe from "stripe";
-const stripe = new Stripe(process.env.Stripe_Secret_Key as string, {
-  apiVersion: "2022-11-15",
-});
+const stripe = new Stripe(
+  "sk_test_51MY9FkSCQoxW95zLMRveGH4zZwk7bLWZQHIDapj67xusraWPNe6I1YR5muvejK0ZqzS5zPBP65YjpA3xve2n7K2x00GQ9oZGLc",
+  {
+    apiVersion: "2022-11-15",
+  }
+);
 // controller functions
 export const createCustomer = async (req: Request, res: Response) => {
   const { email, name } = req.body;
@@ -116,10 +119,7 @@ export const loginUser = async (req: Request, res: Response) => {
 };
 
 // add payment method and attach it to current logged in user
-export const addPaymentMethod = async (
-  req: any,
-  res: Response
-) => {
+export const addPaymentMethod = async (req: any, res: Response) => {
   try {
     const stripeId = req.stripeId;
     const { type, card } = req.body;
@@ -139,10 +139,7 @@ export const addPaymentMethod = async (
   }
 };
 
-export const getPaymentMethod = async (
-  req: any,
-  res: Response
-) => {
+export const getPaymentMethod = async (req: any, res: Response) => {
   try {
     const stripeId = req.stripeId;
     const paymentMethodId = req.query.id;
@@ -151,7 +148,7 @@ export const getPaymentMethod = async (
         customer: stripeId,
       });
       return res.status(200).json({
-        message: "All Payment methods fetched successfully",
+        message: `Total ${paymentMethods.data.length} Payment methods fetched successfully`,
         paymentMethods,
       });
     }
@@ -167,17 +164,15 @@ export const getPaymentMethod = async (
   }
 };
 
-export const updatePaymentMethod = async (
-  req: any,
-  res: Response
-) => {
+export const updatePaymentMethod = async (req: any, res: Response) => {
   try {
     const paymentMethodId = req.query.id;
-    const { card } = req.body;
+    const { billing_details, card } = req.body;
     const paymentMethod = await stripe.paymentMethods.update(
       String(paymentMethodId),
       {
-        card: card,
+        billing_details,
+        card,
       }
     );
     res.status(200).json({
@@ -189,10 +184,7 @@ export const updatePaymentMethod = async (
   }
 };
 
-export const deletePaymentMethod = async (
-  req: any,
-  res: Response
-) => {
+export const deletePaymentMethod = async (req: any, res: Response) => {
   try {
     const paymentMethodId = req.query.id;
     const paymentMethod = await stripe.paymentMethods.detach(
