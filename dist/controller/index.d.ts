@@ -1,0 +1,11 @@
+import { Request, Response } from "express";
+export declare const createCustomer: (req: Request, res: Response) => Promise<void>;
+export declare const getAllCustomer: (req: Request, res: Response) => Promise<void>;
+export declare const getSingleCustomer: (req: Request, res: Response) => Promise<void>;
+export declare const registerUser: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const loginUser: (req: Request, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const addPaymentMethod: (req: any, res: Response) => Promise<void>;
+export declare const getPaymentMethod: (req: any, res: Response) => Promise<Response<any, Record<string, any>> | undefined>;
+export declare const updatePaymentMethod: (req: any, res: Response) => Promise<void>;
+export declare const deletePaymentMethod: (req: any, res: Response) => Promise<void>;
+export declare const dummyResponse: (req: Request, res: Response) => Promise<void>;
