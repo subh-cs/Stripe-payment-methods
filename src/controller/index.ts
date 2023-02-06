@@ -198,3 +198,7 @@ export const deletePaymentMethod = async (req: any, res: Response) => {
     res.status(500).json({ message: (error as Error).message });
   }
 };
+
+export const dummyResponse = async (req: Request, res: Response) => {
+  res.json({ message: "Hello World" });
+};

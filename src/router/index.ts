@@ -9,7 +9,10 @@ import {
   getPaymentMethod,
   updatePaymentMethod,
   deletePaymentMethod,
+  dummyResponse,
 } from "../controller";
+
+router.get("/", dummyResponse);
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
