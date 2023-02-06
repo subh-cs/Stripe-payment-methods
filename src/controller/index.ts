@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-import { IGetUserAuthInfoRequest } from "../helper/helper";
+
 // Prisma client
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
