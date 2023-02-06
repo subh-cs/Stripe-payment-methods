@@ -117,7 +117,7 @@ export const loginUser = async (req: Request, res: Response) => {
 
 // add payment method and attach it to current logged in user
 export const addPaymentMethod = async (
-  req: IGetUserAuthInfoRequest,
+  req: any,
   res: Response
 ) => {
   try {
@@ -140,7 +140,7 @@ export const addPaymentMethod = async (
 };
 
 export const getPaymentMethod = async (
-  req: IGetUserAuthInfoRequest,
+  req: any,
   res: Response
 ) => {
   try {
@@ -168,7 +168,7 @@ export const getPaymentMethod = async (
 };
 
 export const updatePaymentMethod = async (
-  req: IGetUserAuthInfoRequest,
+  req: any,
   res: Response
 ) => {
   try {
@@ -190,7 +190,7 @@ export const updatePaymentMethod = async (
 };
 
 export const deletePaymentMethod = async (
-  req: IGetUserAuthInfoRequest,
+  req: any,
   res: Response
 ) => {
   try {

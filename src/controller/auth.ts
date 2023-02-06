@@ -27,7 +27,7 @@ const jwt = require("jsonwebtoken");
 // };
 
 export const auth = (
-  req: IGetUserAuthInfoRequest,
+  req: any,
   res: Response,
   next: NextFunction
 ) => {
