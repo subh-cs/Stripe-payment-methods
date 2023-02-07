@@ -1,5 +1,5 @@
 # Stripe Payment Method API
-This is a Node.js application that provides a set of RESTful APIs for managing a user's payment methods using the Stripe payment platform.
+This is a Node.js + Express application that provides a set of RESTful APIs for managing a user's payment methods using the Stripe payment platform. The app is built with TypeScript, and uses Prisma as an ORM and Postgres as the database.
 
 ## Dependencies
 - "@prisma/client": "^4.9.0"
