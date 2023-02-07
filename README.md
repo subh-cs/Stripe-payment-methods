@@ -1,5 +1,5 @@
 # Stripe Payment Method API
-This is a Node.js + Express application that provides a set of RESTful APIs for managing a user's payment methods using the Stripe payment platform. The app is built with TypeScript, and uses Prisma as an ORM and Postgres as the database.
+### This is a Node.js + Express application that provides a set of RESTful APIs for managing a user's payment methods using the Stripe payment platform. The app is built with TypeScript, and uses Prisma as an ORM and Postgres as the database.
 
 ## API Routes
 | Method | Endpoint | Description |
@@ -14,14 +14,10 @@ This is a Node.js + Express application that provides a set of RESTful APIs for 
 | DELETE | /delete-payment-method?id=${id} | Delete the payment method for a user (requires authentication) |
 
 ## Running the Application Locally
-1. Clone the repository: `git clone https://github.com/<your-username>/stripe-payment-method-api.git`
-2. Navigate to the cloned directory: `cd stripe-payment-method-api`
+1. Clone the repository: `https://github.com/subh-cs/Stripe-payment-methods.git`
+2. Navigate to the cloned directory: `cd Stripe-payment-methods`
 3. Install the dependencies: `npm install`
-4. Create a `.env` file and set the following environment variables:
-   - `STRIPE_SECRET_KEY`: Your Stripe secret key
-   - `JWT_SECRET_KEY`: A secret key for generating JSON web tokens
-   - `PRISMA_ENDPOINT`: The endpoint for your Prisma API
-   - `PRISMA_SECRET`: The secret for your Prisma API
+4. envoirment variables are already there, no need to set
 5. Start the development server: `npm run dev`
 6. The API will be available at `http://localhost:3000`
 
