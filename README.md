@@ -7,10 +7,11 @@ This is a Node.js + Express application that provides a set of RESTful APIs for 
 | GET | / | Dummy response |
 | POST | /register | Register a new user |
 | POST | /login | Login a user |
+| GET | /get-payment-method | Get the list of payment methods for a user (requires authentication) |
+| GET | /get-payment-method?id=${id} | Get a single payment method by payment method id (requires authentication) |
 | POST | /add-payment-method | Add a new payment method for a user (requires authentication) |
-| GET | /get-payment-method | Get the payment method for a user (requires authentication) |
-| PATCH | /update-payment-method | Update the payment method for a user (requires authentication) |
-| DELETE | /delete-payment-method | Delete the payment method for a user (requires authentication) |
+| PATCH | /update-payment-method?id=${id} | Update the payment method for a user (requires authentication) |
+| DELETE | /delete-payment-method?id=${id} | Delete the payment method for a user (requires authentication) |
 
 ## Running the Application Locally
 1. Clone the repository: `git clone https://github.com/<your-username>/stripe-payment-method-api.git`
