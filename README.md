@@ -1,5 +1,8 @@
-# Stripe Payment Method API
+# Stripe Payment Method API Application
 ### This is a Node.js + Express application that provides a set of RESTful APIs for managing a user's payment methods using the Stripe payment platform. The app is built with TypeScript, and uses Prisma as an ORM and Postgres as the database.
+
+## Preview Video
+[Click here] (https://www.loom.com/share/5cdef53fce4f4998a1f241349dc12ed0)
 
 ## API Routes
 | Method | Endpoint | Description |
@@ -34,6 +37,3 @@
 - "stripe": "^11.9.1"
 - "ts-node": "^10.9.1"
 - "typescript": "^4.9.5"
-
-## Note
-Make sure to replace the dummy response function with a valid response in the `dummyResponse` route.
